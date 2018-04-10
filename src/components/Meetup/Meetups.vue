@@ -15,7 +15,7 @@
                                 <v-card-title primary-title>
                                     <div>
                                         <h3>{{meetup.title}}</h3>
-                                        <div>{{meetup.date}} - {{meetup.location}}</div>
+                                        <div>{{meetup.date | dateToLocal}} - {{meetup.location}}</div>
                                     </div>
                                 </v-card-title>
                                 <v-card-actions>
