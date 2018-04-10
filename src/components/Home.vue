@@ -29,24 +29,9 @@
 
 <script>
     export default {
-        data() {
-            return {
-                meetups: [
-                    {   
-                        id: '45sdfh8dh',
-                        title: 'Atlanta Developer Conference',
-                        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/Atlanta_Skyline_from_Buckhead.jpg'
-                    },
-                    {
-                        id: 'hf5hjtr65',
-                        title:'Makin\' Damn Games',
-                        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Gdc2010_newell_portal_BSOD.jpg'
-                    },
-                    {   id: '5gas8adg',
-                        title: 'Cookie Clicker Group Session',
-                        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/ae/OSCAL_2016_-_conference_moments_93.jpg'
-                    }
-                    ]
+        computed: {
+            meetups () {
+                return this.$store.getters.featuredMeetups
             }
         },
         methods: {

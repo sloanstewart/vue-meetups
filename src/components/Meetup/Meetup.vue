@@ -3,14 +3,14 @@
         <v-layout row wrap>
             <v-flex xs12>
                 <v-card>
-                    <v-card-title><h4 class="primary--text">Title</h4></v-card-title>
+                    <v-card-title><h2 class="primary--text">{{meetup.title}}</h2></v-card-title>
                     <v-card-media
-                        src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Atlanta_Skyline_from_Buckhead.jpg"
+                        :src="meetup.imageUrl"
                         height="400px"
                     ></v-card-media>
                     <v-card-text>
-                        <div class="info--text">Date - Location</div>
-                        <div>Blah blah blah.</div>
+                        <div class="info--text">{{meetup.date}} - {{meetup.location}}</div>
+                        <div>{{meetup.description}}</div>
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
@@ -21,3 +21,14 @@
         </v-layout>
     </v-container>
 </template>
+
+<script>
+    export default {
+        props: ['id'],
+        computed: {
+            meetup () {
+                return this.$store.getters.loadedMeetup(this.id)
+            }
+        }
+    }
+</script>
