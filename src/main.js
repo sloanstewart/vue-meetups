@@ -10,9 +10,11 @@ import {
   VFooter,
   VList,
   VBtn,
+  VCard,
   VIcon,
   VGrid,
   VToolbar,
+  VCarousel,
   transitions
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
@@ -24,9 +26,11 @@ Vue.use(Vuetify, {
     VFooter,
     VList,
     VBtn,
+    VCard,
     VIcon,
     VGrid,
     VToolbar,
+    VCarousel,
     transitions
   }
 })
