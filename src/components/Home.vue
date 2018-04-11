@@ -1,6 +1,18 @@
 <template>
     <v-container>
         <v-layout>
+            <v-flex xs12 class="text-xs-center">
+                <v-progress-circular 
+                    indeterminate 
+                    :width="7" 
+                    :size="70"
+                    class="primary--text"
+                    v-if="loading"
+                ></v-progress-circular>
+            </v-flex>
+        </v-layout>
+        
+        <v-layout v-if="!loading">
             <v-flex xs12>
                 <v-carousel  style="cursor: pointer">
                     <v-carousel-item
@@ -32,6 +44,9 @@
         computed: {
             meetups () {
                 return this.$store.getters.featuredMeetups
+            },
+            loading () {
+                return this.$store.getters.loading
             }
         },
         methods: {
@@ -61,7 +76,7 @@
     .title {
         display: block;
         position: absolute;
-        bottom: 50px;
+        top: 0;
         background: rgba(0,0,0,0.5);
         color: #fff;
         font-size: 2rem;
