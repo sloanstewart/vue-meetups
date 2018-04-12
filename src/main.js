@@ -9,7 +9,7 @@ import DateFilter from './filters/date'
 import * as firebase from 'firebase'
 import Alert from './components/shared/Alert'
 import EditMeetupDetailsDialog from './components/Meetup/Edit/EditMeetupDetailsDialog.vue'
-import EditMeetupDateDialog from './components/Meetup/Edit/EditMeetupDateDialog.vue'
+import RegisterDialog from './components/Meetup/Registration/RegisterDialog.vue'
 import {
   Vuetify,
   VApp,
@@ -62,7 +62,7 @@ Vue.config.productionTip = false
 Vue.filter('dateToLocal', DateFilter)
 Vue.component('app-alert', Alert)
 Vue.component('app-edit-meetup-details-dialog', EditMeetupDetailsDialog)
-Vue.component('app-edit-meetup-date-dialog', EditMeetupDateDialog)
+Vue.component('app-register-dialog', RegisterDialog)
 
 /* eslint-disable no-new */
 new Vue({
@@ -83,6 +83,7 @@ new Vue({
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.$store.dispatch('autoSignIn', user)
+        this.$store.dispatch('fetchUserData')
       }
     })
     this.$store.dispatch('loadMeetups')
