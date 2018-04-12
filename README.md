@@ -1,6 +1,14 @@
-# dev-meetups
+# vue-meetups
 
-> A Vue.js project
+1. Vue.js
+2. Vuetify
+3. Firebase
+
+     a. Authentication
+     
+     b. Database
+     
+     c. Storage
 
 ## Build Setup
 
