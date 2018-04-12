@@ -1,5 +1,7 @@
 # vue-meetups
 
+> A small, simple app for organizing meetups.
+
 1. Vue.js
 2. Vuetify
 3. Firebase
