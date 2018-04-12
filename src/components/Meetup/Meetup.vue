@@ -31,6 +31,7 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <app-register-dialog v-if="userIsAuthenticated && !userIsCreator" :id="id"></app-register-dialog>
+                        <v-btn primary v-else to="/signin">Sign In To Register</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>
